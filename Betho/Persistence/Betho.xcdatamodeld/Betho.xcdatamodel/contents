@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E230" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="GameEntity" representedClassName="GameEntity" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="owned_phrases" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PhraseEntity" inverseName="owning_game" inverseEntity="PhraseEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="PhraseEntity" representedClassName="PhraseEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="owning_game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GameEntity" inverseName="owned_phrases" inverseEntity="GameEntity"/>
+    </entity>
+    <elements>
+        <element name="GameEntity" positionX="-63" positionY="-9" width="128" height="74"/>
+        <element name="PhraseEntity" positionX="-54" positionY="18" width="128" height="74"/>
+    </elements>
+</model>
