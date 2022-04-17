@@ -15,17 +15,32 @@ struct GameListView: View {
     private var games: FetchedResults<GameEntity>
     
     @State private var isPresented = false
+    @State private var isEditable = false
     
     
     var body: some View {
         VStack {
             List {
                 ForEach(games) { game in
-                    NavigationLink(destination: {
-                        PhraseListView(game: game)
-                    }, label: {
-                        Text(game.name ?? "")
-                    })
+                    ZStack {
+                        if isEditable == false {
+                            NavigationLink(destination: {
+                                PhraseListView(game: game)
+                            }, label: {
+                                Text(game.name ?? "")
+                            })
+                        } else if isEditable == true {
+                            NavigationLink(destination: {
+                                EditGameView(gameEntity: game).onAppear(perform: { isEditable = false })
+                                
+                            }, label: {
+                                Text(game.unwrappedName)
+                                Spacer()
+                                Image(systemName: "text.append")
+                            })
+                        }
+                    }
+                    
                 }
                 .onDelete(perform: deleteGame)
             }
@@ -35,6 +50,11 @@ struct GameListView: View {
             }
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button(action:  {
+                        isEditable.toggle()
+                    }, label: {
+                        Label("Edit Game", systemImage: "square.and.pencil")
+                    })
                     Button(action: {
                         isPresented.toggle()
                     }, label: {

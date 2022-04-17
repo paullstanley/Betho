@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA580504280C6D6600871972 /* EditGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA580503280C6D6600871972 /* EditGameView.swift */; };
+		FA580506280C77B800871972 /* EditPhraseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA580505280C77B800871972 /* EditPhraseView.swift */; };
 		FAC2652A2804BACD0020069B /* BethoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC265292804BACD0020069B /* BethoApp.swift */; };
 		FAC2652C2804BACD0020069B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2652B2804BACD0020069B /* ContentView.swift */; };
 		FAC2652E2804BACF0020069B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC2652D2804BACF0020069B /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA580503280C6D6600871972 /* EditGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGameView.swift; sourceTree = "<group>"; };
+		FA580505280C77B800871972 /* EditPhraseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPhraseView.swift; sourceTree = "<group>"; };
 		FAC265262804BACD0020069B /* Betho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Betho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC265292804BACD0020069B /* BethoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BethoApp.swift; sourceTree = "<group>"; };
 		FAC2652B2804BACD0020069B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 				FAC265502804FD820020069B /* AddPhraseView.swift */,
 				FAC265482804D3C80020069B /* CreateGameView.swift */,
 				FAC2654A2804DA050020069B /* GameListView.swift */,
+				FA580505280C77B800871972 /* EditPhraseView.swift */,
+				FA580503280C6D6600871972 /* EditGameView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,9 +203,11 @@
 				FAC2654E2804DC7C0020069B /* GameEntity+CoreDataClass.swift in Sources */,
 				FAC265362804BACF0020069B /* Betho.xcdatamodeld in Sources */,
 				FAC2653F2804BF3B0020069B /* BingoSquareView.swift in Sources */,
+				FA580506280C77B800871972 /* EditPhraseView.swift in Sources */,
 				FAC2654F2804DC7C0020069B /* GameEntity+CoreDataProperties.swift in Sources */,
 				FAC2652C2804BACD0020069B /* ContentView.swift in Sources */,
 				FAC265432804C2670020069B /* BingoCardView.swift in Sources */,
+				FA580504280C6D6600871972 /* EditGameView.swift in Sources */,
 				FAC265532804FFFE0020069B /* PhraseListView.swift in Sources */,
 				FAC2653D2804BAE30020069B /* CoreDataManager.swift in Sources */,
 				FAC2652A2804BACD0020069B /* BethoApp.swift in Sources */,
@@ -263,7 +271,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -317,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -17,12 +17,33 @@ struct PhraseListView: View {
     @ObservedObject var game: GameEntity
     
     @State private var isPresented = false
+    @State private var isEditable = false
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(game.phrases) { phrase in
-                    Text(phrase.content ?? "")
+                    ZStack {
+                        if isEditable == false {
+                            Text(phrase.content ?? "").onAppear(perform: {
+                                isEditable = false
+                            })
+                        } else if isEditable == true {
+                            HStack {
+                                NavigationLink(destination: {
+                                    EditPhraseView(phraseEntity: phrase).onAppear(perform: {
+                                        isEditable = false
+                                    })
+                                }, label: {
+                                    Text(phrase.content ?? "")
+                                    Spacer()
+                                    Image(systemName: "text.append")
+                                })
+                                
+                            }
+                        }
+                    }
+                    
                 }
                 .onDelete(perform: deletePhrase)
             }
@@ -33,6 +54,11 @@ struct PhraseListView: View {
         }
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
+                Button(action: {
+                    isEditable.toggle()
+                }, label: {
+                    Label("Edit Phrase", systemImage: "square.and.pencil")
+                })
                 Button(action: {
                     isPresented.toggle()
                 }, label: {

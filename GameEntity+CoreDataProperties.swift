@@ -29,6 +29,13 @@ extension GameEntity {
 
 }
 
+extension GameEntity {
+    public var unwrappedName: String {
+        let name = name ?? "Unknown name"
+        return name
+    }
+}
+
 // MARK: Generated accessors for owned_phrases
 extension GameEntity {
 
